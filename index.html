@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica de sprite</title>
+    <style>
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: #131111;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor {
+    width: 920px;
+    height: 400px;
+    margin: 0 auto;
+    
+    position: relative;
+    background-image: url(img/paisaje3.jpg);
+    /*background: linear-gradient(#b7d6c7, transparent) #131211;/*linear-gradient(#90ebff, white);*/
+    transition: background-color 1s linear;
+    overflow: hidden;
+}
+
+.mediodia {
+    background-image: url(img/paisaje1.jpg);
+    
+}
+
+.tarde {
+    background-image: url(img/paisaje2.jpg);
+     
+}
+
+.noche {
+    background-image: url(img/paisaje3.jpg);
+     
+}
+
+.dino {
+    width: 47px;
+    height: 84px;
+
+    position:absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+
+    background: url(img/din2.png) repeat-x 0px 0px;
+    background-size: 316px 84px;
+    background-position-x: 0px;
+
+}
+
+.dino-corriendo {
+    animation: animarDino 1.00s steps(4) infinite;
+}
+ 
+
+.suelo {
+    width: 200%;
+    height: 42px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background: url(img/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 42px;
+
+}
+
+.cactus{
+    width: 96px;
+    height: 66px;
+
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(img/cactus1.png) no-repeat;
+}
+.cactus2{
+    width: 98px;
+    height: 98px;
+
+    background: url(img/cactus2.png) no-repeat;
+}
+
+.nube{
+    width: 92px;
+    height: 92px;
+
+    position: absolute;
+    z-index: 0;
+
+    background: url(img/nube2.png) no-repeat;
+    background-size: 92px 80px;
+}
+
+.score{
+    width: 100px;
+    height: 30px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 10;
+
+    color: #0e0d0d00;
+    font-family: Verdana;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+ 
+
+@keyframes animarDino{
+    from{
+        background-position-x: -12px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <div class="suelo"></div>
+        
+        <div class="dino dino-corriendo"></div>
+
+        <div class="score">0</div>
+
+    </div>
+
+    
+ 
+</body>
+<script src="javascript.js"></script>
+</html>
